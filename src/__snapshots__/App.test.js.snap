@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ServiceRequestsSummary /> renders connected component 1`] = `
+<div
+  className="App"
+>
+  <h1>
+    Counter
+  </h1>
+  <button
+    className="-"
+    onClick={[Function]}
+  >
+    -
+  </button>
+  <p>
+    0
+  </p>
+  <button
+    className="+"
+    onClick={[Function]}
+  >
+    +
+  </button>
+</div>
+`;

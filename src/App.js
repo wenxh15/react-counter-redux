@@ -8,7 +8,7 @@ import selectors from "./selector";
 
 import "./styles.css";
 
-class App extends Component {
+export class App extends Component {
   static propTypes = {
     actions: PropTypes.object.isRequired,
     count: PropTypes.number.isRequired
@@ -20,22 +20,23 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Counter</h1>
-        <button onClick={() => actions.decreaseCounter()}>-</button>
+        <button className="-" onClick={actions.decreaseCounter}>
+          -
+        </button>
         <p>{count}</p>
-        <button onClick={() => actions.addCounter()}>+</button>
+        <button className="+" onClick={actions.addCounter}>
+          +
+        </button>
       </div>
     );
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   count: selectors.counterSelector(state)
 });
 const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators({ ...actions }, dispatch)
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
